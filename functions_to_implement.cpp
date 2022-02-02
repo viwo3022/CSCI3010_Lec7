@@ -20,8 +20,8 @@ std::vector<int> MatchVectors(std::vector<int> a, std::vector<int> b);
 // (16 = 2 * 2 * 2 * 2 * 1 -> 1, 7 -> 7, 26 = 2 * 13 -> 13, 52 = 2 * 2 * 13 -> 13)
 int RemoveTwos(int original);
 
-// takes a vector of integers and removes all elements evenly divisible by the passed in int
-std::vector<int> MultiplesFilter(std::vector<int>, int divides_by);
+// takes a vector of integers and removes all elements evenly divisible by the passed in int 
+std::vector<int> MultiplesFilter(std::vector<int>, int divides_by){}
 
 // returns a vector with true for even numbers and false for odd numbers
 std::vector<bool> EvenMask(std::vector<int>);
@@ -92,12 +92,25 @@ std::vector<double> VectorTimesN(std::vector<double> v, double n);
 // values n*1, n*2, n*3... up to n*m
 std::vector<double> Multiples(double n, double m);
 
-// returns -1 if the number is negative and 1 if positive
-double Sign(double num);
+// return -1 if the number is negative and 1 if positive
+double Sign(double num){
+    if (num < 0){
+        return -1;
+    }
+    else{
+        return 1;
+    }
+}
 
 
 // adds n to each element of the vector
-std::vector<int> AddN(std::vector<int>, int n);
+std::vector<int> AddN(std::vector<int>, int n){
+    std::vector<int> result;
+    for (int i = 0; i < v.size(); i++){
+        result.push_back(v[i] + n);
+    }
+    return result;
+}
 
 // adds n to each element of the vector
 std::vector<double> AddN(std::vector<double>, double n);
