@@ -1,5 +1,6 @@
 /* String functions section */
-
+#include <vector>
+#include <iostream>
 // Splits a single string on separator into a vector of strings
 std::vector<std::string> Split(std::string whole, std::string separator);
 
@@ -30,7 +31,14 @@ std::vector<bool> EvenMask(std::vector<int>);
 std::vector<bool> OddMask(std::vector<int>);
 
 // Sums all numbers in a vector and returns the resulting value
-int Sum(std::vector<int> nums);
+int Sum(std::vector<int> nums){
+    int sumNums = 0;
+    for(auto num: nums){
+        sumNums += num;
+        std::cout << num << std::endl;
+    }
+    return sumNums;
+}
 
 // Multiplies all numbers in a vector together and returns the resulting value
 int Product(std::vector<int> nums);
@@ -54,8 +62,18 @@ int NthFibonacci(int n);
 // takes an int, n, and returns the factorial of that int (n!)
 int Factorial(int n);
 
+
 // returns -1 if the number is negative and 1 if positive
-int Sign(int num);
+int Sign(int num){
+    if (num < 0){
+        return -1;
+    }
+    
+    else{
+        return 1;
+    }
+}
+
 
 // takes two vectors of doubles, a and b. The function then removes elements from a if they are also in b.
 // If the double is in b, but not in a, nothing happens.
